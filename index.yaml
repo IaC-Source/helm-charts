@@ -3,23 +3,23 @@ entries:
   dashboard:
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2020-10-31T23:09:42.21457774+09:00"
+    created: "2020-10-31T23:48:26.695621207+09:00"
     description: edu purpose dashboard
-    digest: 439faef0a45a0b2aba48827ca978dd3222e16b33e7d1caf30d47e6f248dcc667
-    home: https://github.com/seongjumoon/template-base
+    digest: 0f194da9af552f21dcbbf96f0cd9db7bbc6aab043b3b4eed1363ede8adfce287
+    home: https://github.com/iac-source/dashboard
     maintainers:
     - email: seongju.moon@linux.com
       name: Seongju Moon
     name: dashboard
     sources:
-    - https://github.com/seongjumoon/template-base
+    - https://github.com/iac-source/dashboard
     urls:
     - dashboard-1.0.0.tgz
     version: 1.0.0
   grafana:
   - apiVersion: v1
     appVersion: 7.0.3
-    created: "2020-10-31T23:09:42.217454381+09:00"
+    created: "2020-10-31T23:48:26.707980389+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: 79d408a92f8f1b78877dba988c5c0e624e284d94adb8770674128ce1942b389f
     home: https://grafana.net
@@ -41,7 +41,7 @@ entries:
   jenkins:
   - apiVersion: v1
     appVersion: lts
-    created: "2020-10-31T23:09:42.223864521+09:00"
+    created: "2020-10-31T23:48:26.717768026+09:00"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -75,7 +75,7 @@ entries:
   prometheus:
   - apiVersion: v1
     appVersion: 2.19.0
-    created: "2020-10-31T23:09:42.234141497+09:00"
+    created: "2020-10-31T23:48:26.75003163+09:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -100,4 +100,4 @@ entries:
     urls:
     - prometheus-11.6.0.tgz
     version: 11.6.0
-generated: "2020-10-31T23:09:42.213784687+09:00"
+generated: "2020-10-31T23:48:26.694560898+09:00"
