@@ -2,12 +2,12 @@ apiVersion: v1
 appVersion: 1.0.0
 description: edu purpose dashboard
 engine: gotpl
-home: https://github.com/seongjumoon/template-base
+home: https://github.com/iac-source/dashboard
 maintainers:
 - email: seongju.moon@linux.com
   name: Seongju Moon
 name: dashboard
 sources:
-- https://github.com/seongjumoon/template-base
+- https://github.com/iac-source/dashboard
 tillerVersion: '>=2.8.0'
 version: 1.0.0
