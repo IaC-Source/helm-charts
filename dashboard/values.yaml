@@ -4,7 +4,7 @@ dashboard:
   persistentVolume:
     enabled: true
     existingClaim: "dashboard"
-  color: "orange"
+  color: "blue"
 
 service:
   port: 80

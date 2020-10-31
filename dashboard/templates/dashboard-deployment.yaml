@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: dashboard
-        image: seongjumoon/dashboard:{{ .Values.dashboard.color }}
+        image: sysnet4admin/dashboard:{{ .Values.dashboard.color }}
         volumeMounts:
         - name: log-volume
           mountPath: /log
