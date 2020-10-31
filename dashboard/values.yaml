@@ -1,0 +1,16 @@
+# applcation base
+dashboard:
+  printName: "Users"
+  persistentVolume:
+    enabled: true
+    existingClaim: "dashboard"
+  color: "orange"
+
+service:
+  port: 80
+  targetPort: 80
+  type: LoadBalancer
+
+# pvc settings
+persistence:
+  size: 10Gi

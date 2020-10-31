@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{template "dashboard.fullname" . }}-service
+  {{ template "dashboard.namespace" . }}
+  labels:
+    "app.kubernetes.io/name": '{{ template "dashboard.name" .}}'
+    "helm.sh/chart": "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    "app.kubernetes.io/managed-by": "{{ .Release.Service }}"
+    "app.kubernetes.io/instance": "{{ .Release.Name }}"
+spec:
+  {{- if (and (eq .Values.service.type "ClusterIP") (not (empty .Values.dashboard.clusterIP))) }}
+  clusterIP: {{.Values.dashboard.clusterIP}}
+  {{- end }}
+  ports:
+    - port: {{.Values.service.port}}
+      name: http
+      targetPort: {{ .Values.service.targetPort }}
+      {{- if (and (eq .Values.service.type "NodePort") (not (empty .Values.dashboard.nodePort))) }}
+      nodePort: {{.Values.dashboard.nodePort}}
+      {{- end }}
+  selector:
+    "app.kubernetes.io/instance": "{{ .Release.Name }}"
+  type: {{.Values.service.type}}
+  {{if eq .Values.service.type "LoadBalancer"}}
+{{- if .Values.dashboard.loadBalancerSourceRanges }}
+  loadBalancerSourceRanges:
+{{ toYaml .Values.dashboard.loadBalancerSourceRanges | indent 4 }}
+{{- end }}
+  {{if .Values.dashboard.loadBalancerIP}}
+  loadBalancerIP: {{.Values.dashboard.loadBalancerIP}}
+  {{end}}
+  {{end}}

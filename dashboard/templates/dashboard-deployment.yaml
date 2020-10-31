@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{template "dashboard.fullname" . }}-deployment
+{{- if .Values.dashboard.deploymentAnnotations }}
+  annotations:
+{{ toYaml .Values.dashboard.deploymentAnnotations | indent 4 }}
+{{- end }}
+  labels:
+    app.kubernetes.io/instance: "{{ .Release.Name }}"
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: "{{ .Release.Name }}"
+  {{- if not .Values.dashboard.replicas}}
+  replicas: 1
+  {{else}}
+  replicas: {{.Values.dashboard.replicas}}
+  {{- end}}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: "{{ .Release.Name }}"
+    spec:
+      containers:
+      - name: dashboard
+        image: seongjumoon/dashboard:{{ .Values.dashboard.color }}
+        volumeMounts:
+        - name: log-volume
+          mountPath: /log
+        - name: config-volume
+          mountPath: /etc/nginx/conf.d/
+        ports:
+        - containerPort: 80
+      volumes:
+        - name: config-volume
+          configMap:
+            name: dashboard-configmap
+        - name: log-volume
+        {{- if .Values.dashboard.persistentVolume.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ if .Values.dashboard.persistentVolume.existingClaim }}{{ .Values.dashboard.persistentVolume.existingClaim }}{{- else }}{{ template "dashboard.fullname" . }}{{- end }}
+        {{- else }}
+          emptyDir:
+          {{- if .Values.dashboard.emptyDir.sizeLimit }}
+            sizeLimit: {{ .Values.dashboard.emptyDir.sizeLimit }}
+          {{- else }}
+            {}
+          {{- end -}}
+        {{- end -}}

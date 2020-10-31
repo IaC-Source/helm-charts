@@ -1,0 +1,18 @@
+Thanks you for installing {{ .Chart.Name }}.
+
+This Application Configure base on nginx.
+it's serving your name that when your install this chart given variable!
+Your theme is {{ .Values.dashboard.color }}.
+
+Please check with the command below.
+ $ kubectl get service {{template "dashboard.fullname" . }}-service
+ $ kubectl get deployment {{template "dashboard.fullname" . }}-deployment
+
+To disclaimer:
+This chart is made for educational propose.
+DO NOT TRY at Production environment.
+Your release is named {{ .Release.Name}}.
+
+To learn more about this release, try
+ $ helm status {{ .Release.Name }}
+ $ helm get all {{ .Release.Name }}
