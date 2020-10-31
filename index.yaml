@@ -1,0 +1,103 @@
+apiVersion: v1
+entries:
+  dashboard:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2020-10-30T02:07:44.8693605+09:00"
+    description: For Educational Propose Customize Nginx Dashboard
+    digest: c2e6d54878d71d3ba1c0641bd52d2451bc63d33c500819854da65cbc1db00aab
+    home: https://github.com/seongjumoon/template-base
+    maintainers:
+    - email: seongju.moon@linux.com
+      name: Seongju Moon
+    name: dashboard
+    sources:
+    - https://github.com/seongjumoon/template-base
+    urls:
+    - dashboard-1.0.0.tgz
+    version: 1.0.0
+  grafana:
+  - apiVersion: v1
+    appVersion: 7.0.3
+    created: "2020-10-30T02:07:44.8710025+09:00"
+    description: The leading tool for querying and visualizing time series and metrics.
+    digest: 79d408a92f8f1b78877dba988c5c0e624e284d94adb8770674128ce1942b389f
+    home: https://grafana.net
+    icon: https://raw.githubusercontent.com/grafana/grafana/master/public/img/logo_transparent_400x.png
+    kubeVersion: ^1.8.0-0
+    maintainers:
+    - email: zanhsieh@gmail.com
+      name: zanhsieh
+    - email: rluckie@cisco.com
+      name: rtluckie
+    - email: maor.friedman@redhat.com
+      name: maorfr
+    name: grafana
+    sources:
+    - https://github.com/grafana/grafana
+    urls:
+    - grafana-5.3.0.tgz
+    version: 5.3.0
+  jenkins:
+  - apiVersion: v1
+    appVersion: lts
+    created: "2020-10-30T02:07:44.8744339+09:00"
+    description: Open source continuous integration server. It supports multiple SCM
+      tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
+      Maven-based projects as well as arbitrary scripts.
+    digest: 939718cdfdd3570a182e126f0eebd683f8fcb04cf02a1bf3f9932dff558d2be5
+    home: https://jenkins.io/
+    icon: https://wiki.jenkins-ci.org/download/attachments/2916393/logo.png
+    maintainers:
+    - email: lachlan.evenson@microsoft.com
+      name: lachie83
+    - email: viglesias@google.com
+      name: viglesiasce
+    - email: maor.friedman@redhat.com
+      name: maorfr
+    - email: mail@torstenwalter.de
+      name: torstenwalter
+    - email: garridomota@gmail.com
+      name: mogaal
+    - email: wmcdona89@gmail.com
+      name: wmcdona89
+    - email: timjacomb1@gmail.com
+      name: timja
+    name: jenkins
+    sources:
+    - https://github.com/jenkinsci/jenkins
+    - https://github.com/jenkinsci/docker-jnlp-slave
+    - https://github.com/maorfr/kube-tasks
+    - https://github.com/jenkinsci/configuration-as-code-plugin
+    urls:
+    - jenkins-2.7.1.tgz
+    version: 2.7.1
+  prometheus:
+  - apiVersion: v1
+    appVersion: 2.19.0
+    created: "2020-10-30T02:07:44.8798659+09:00"
+    dependencies:
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.8.*
+    description: Prometheus is a monitoring system and time series database.
+    digest: 8212b6870d276b9f19cad41ee66d931a6ce42702074bcdf4a174c9d24061fc76
+    home: https://prometheus.io/
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    maintainers:
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: zanhsieh@gmail.com
+      name: zanhsieh
+    name: prometheus
+    sources:
+    - https://github.com/prometheus/alertmanager
+    - https://github.com/prometheus/prometheus
+    - https://github.com/prometheus/pushgateway
+    - https://github.com/prometheus/node_exporter
+    - https://github.com/kubernetes/kube-state-metrics
+    urls:
+    - prometheus-11.6.0.tgz
+    version: 11.6.0
+generated: "2020-10-30T02:07:44.8686263+09:00"
