@@ -1,4 +1,3 @@
-MetalLB
 [metallb](https://github.com/metallb/metallb) is an open source, rock solid LoadBalancer. It handles the ServiceType: Loadbalancer.
 
 _this is education purpose chart_
