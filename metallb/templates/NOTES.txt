@@ -1,0 +1,5 @@
+MetalLB load-balancer is successfully installed.
+1. IP Address range {{ .Values.configmap.ipRange}} is available.
+2. You can create a LoadBalancer service with following command below.
+kubectl expose deployment [deployment-name] --type=LoadBalancer --name=[LoadBalancer-name] --port=[external port]
+

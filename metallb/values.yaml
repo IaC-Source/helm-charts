@@ -1,0 +1,8 @@
+speaker:
+  image: metallb/speaker
+  tag: v0.8.2
+controller:
+  image: metallb/controller
+  tag: v0.8.2
+configmap:
+  ipRange: 192.168.1.11-192.168.1.13
