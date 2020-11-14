@@ -3,7 +3,7 @@ entries:
   dashboard:
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2020-10-31T23:48:26.695621207+09:00"
+    created: "2020-11-14T14:00:20.7045532+09:00"
     description: edu purpose dashboard
     digest: 0f194da9af552f21dcbbf96f0cd9db7bbc6aab043b3b4eed1363ede8adfce287
     home: https://github.com/iac-source/dashboard
@@ -19,7 +19,7 @@ entries:
   grafana:
   - apiVersion: v1
     appVersion: 7.0.3
-    created: "2020-10-31T23:48:26.707980389+09:00"
+    created: "2020-11-14T14:00:20.7076673+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: 79d408a92f8f1b78877dba988c5c0e624e284d94adb8770674128ce1942b389f
     home: https://grafana.net
@@ -41,7 +41,7 @@ entries:
   jenkins:
   - apiVersion: v1
     appVersion: lts
-    created: "2020-10-31T23:48:26.717768026+09:00"
+    created: "2020-11-14T14:00:20.7127183+09:00"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -72,10 +72,21 @@ entries:
     urls:
     - jenkins-2.7.1.tgz
     version: 2.7.1
+  metallb:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-11-14T14:00:20.7132639+09:00"
+    description: unofficial helm chart of MetalLB, bare-metal LoadBalancer
+    digest: 8ab010d0537b1c7b11320fad8627d561c0decf2d7c8a1a93ce9e257574593898
+    name: metallb
+    type: application
+    urls:
+    - metallb-0.1.0.tgz
+    version: 0.1.0
   prometheus:
   - apiVersion: v1
     appVersion: 2.19.0
-    created: "2020-10-31T23:48:26.75003163+09:00"
+    created: "2020-11-14T14:00:20.718241+09:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -100,4 +111,4 @@ entries:
     urls:
     - prometheus-11.6.0.tgz
     version: 11.6.0
-generated: "2020-10-31T23:48:26.694560898+09:00"
+generated: "2020-11-14T14:00:20.7027186+09:00"
