@@ -5,7 +5,7 @@ metadata:
     app: metallb
     component: speaker
   name: speaker
-  namespace: metallb-system
+  namespace: {{ .Release.Namespace }}
 spec:
   selector:
     matchLabels:

@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   labels:
     app: metallb
-  name: metallb-system:controller
+  name: {{ .Release.Namespace }}:controller
 rules:
 - apiGroups:
   - ''
@@ -33,7 +33,7 @@ kind: ClusterRole
 metadata:
   labels:
     app: metallb
-  name: metallb-system:speaker
+  name: {{ .Release.Namespace }}:speaker
 rules:
 - apiGroups:
   - ''

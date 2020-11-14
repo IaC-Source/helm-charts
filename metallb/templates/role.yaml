@@ -4,7 +4,7 @@ metadata:
   labels:
     app: metallb
   name: config-watcher
-  namespace: metallb-system
+  namespace: {{ .Release.Namespace }}
 rules:
 - apiGroups:
   - ''

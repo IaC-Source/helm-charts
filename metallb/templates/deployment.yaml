@@ -5,7 +5,7 @@ metadata:
     app: metallb
     component: controller
   name: controller
-  namespace: metallb-system
+  namespace: {{ .Release.Namespace }}
 spec:
   revisionHistoryLimit: 3
   selector:

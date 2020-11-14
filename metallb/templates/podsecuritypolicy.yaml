@@ -4,7 +4,7 @@ metadata:
   labels:
     app: metallb
   name: speaker
-  namespace: metallb-system
+  namespace: {{ .Release.Namespace }}
 spec:
   allowPrivilegeEscalation: false
   allowedCapabilities:
