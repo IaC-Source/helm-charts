@@ -1,6 +1,16 @@
 apiVersion: v2
 name: metallb
 description: unofficial helm chart of MetalLB, bare-metal LoadBalancer
+icon: https://iac-source.github.io/helm-charts/images/metallb-blue.png
+home: https://github.com/metallb/metallb
+sources:
+- https://github.com/metallb/metallb
+- https://iac-source.github.io/helm-charts
+maintainers:
+- email: seongju.moon@linux.com
+  name: Seongju Moon
+- email: genuwoo.j.shim@gmail.com
+  name: Genuwoo Shim
 
 # A chart can be either an 'application' or a 'library' chart.
 #
