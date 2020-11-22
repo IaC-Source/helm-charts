@@ -3,9 +3,9 @@ entries:
   dashboard:
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2020-11-22T16:26:06.0384912+09:00"
+    created: "2020-11-22T16:29:15.0814699+09:00"
     description: edu purpose dashboard
-    digest: cb3c3286e5863fb3caa9621b25c436d752ab16b2c5a349ef2bd23b3fb48b7bcb
+    digest: a45a63d72688850113f89419a42d66ff07657dd41ca200f99382c59a2f76710a
     home: https://github.com/iac-source/dashboard
     maintainers:
     - email: seongju.moon@linux.com
@@ -19,7 +19,7 @@ entries:
   grafana:
   - apiVersion: v1
     appVersion: 7.0.3
-    created: "2020-11-22T16:26:06.04336+09:00"
+    created: "2020-11-22T16:29:15.0847243+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: 79d408a92f8f1b78877dba988c5c0e624e284d94adb8770674128ce1942b389f
     home: https://grafana.net
@@ -41,7 +41,7 @@ entries:
   jenkins:
   - apiVersion: v1
     appVersion: lts
-    created: "2020-11-22T16:26:06.0477242+09:00"
+    created: "2020-11-22T16:29:15.0888133+09:00"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -75,7 +75,7 @@ entries:
   metallb:
   - apiVersion: v2
     appVersion: 0.8.2
-    created: "2020-11-22T16:26:06.0485101+09:00"
+    created: "2020-11-22T16:29:15.0893267+09:00"
     description: unofficial helm chart of MetalLB, bare-metal LoadBalancer
     digest: 68ec4772d207a5f0a85f1ee14a000f48adbecb86620d3c1fc36184f90e2b268e
     home: https://github.com/metallb/metallb
@@ -96,7 +96,7 @@ entries:
   prometheus:
   - apiVersion: v1
     appVersion: 2.19.0
-    created: "2020-11-22T16:26:06.0570472+09:00"
+    created: "2020-11-22T16:29:15.0937255+09:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -121,4 +121,4 @@ entries:
     urls:
     - prometheus-11.6.0.tgz
     version: 11.6.0
-generated: "2020-11-22T16:26:06.0360348+09:00"
+generated: "2020-11-22T16:29:15.0806865+09:00"
