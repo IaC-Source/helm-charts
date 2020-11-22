@@ -26,8 +26,6 @@ spec:
       - name: dashboard
         image: sysnet4admin/dashboard:{{ .Values.dashboard.color }}
         volumeMounts:
-        - name: log-volume
-          mountPath: /log
         - name: config-volume
           mountPath: /etc/nginx/conf.d/
         ports:
@@ -36,15 +34,3 @@ spec:
         - name: config-volume
           configMap:
             name: dashboard-configmap
-        - name: log-volume
-        {{- if .Values.dashboard.persistentVolume.enabled }}
-          persistentVolumeClaim:
-            claimName: {{ if .Values.dashboard.persistentVolume.existingClaim }}{{ .Values.dashboard.persistentVolume.existingClaim }}{{- else }}{{ template "dashboard.fullname" . }}{{- end }}
-        {{- else }}
-          emptyDir:
-          {{- if .Values.dashboard.emptyDir.sizeLimit }}
-            sizeLimit: {{ .Values.dashboard.emptyDir.sizeLimit }}
-          {{- else }}
-            {}
-          {{- end -}}
-        {{- end -}}

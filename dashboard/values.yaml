@@ -1,9 +1,6 @@
 # applcation base
 dashboard:
   printName: "Users"
-  persistentVolume:
-    enabled: true
-    existingClaim: "dashboard"
   color: "blue"
 
 service:
