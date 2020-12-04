@@ -126,6 +126,21 @@ jenkins:
       - key: "jenkins/{{ .Release.Name }}-{{ .Values.agent.componentName }}"
         value: "true"
       templates:
+        runAsGroup: "993"
+        runAsUser: "1000"
+        serviceAccount: "jenkins"
+        volumes:
+        - hostPathVolume:
+            hostPath: "/usr/bin/kubectl"
+            mountPath: "/usr/bin/kubectl"
+        - hostPathVolume:
+            hostPath: "/bin/docker"
+            mountPath: "/bin/docker"
+        - hostPathVolume:
+            hostPath: "/var/run/docker.sock"
+            mountPath: "/var/run/docker.sock"
+      
+      
       {{- include "jenkins.casc.podTemplate" . | nindent 8 }}
     {{- if .Values.additionalAgents }}
       {{- /* save .Values.agent */}}
@@ -192,8 +207,8 @@ Returns kubernetes pod template configuration as code
     resourceLimitMemory: {{.Values.agent.resources.limits.memory}}
     resourceRequestCpu: {{.Values.agent.resources.requests.cpu}}
     resourceRequestMemory: {{.Values.agent.resources.requests.memory}}
-  runAsUser: {{ .Values.agent.runAsUser }}
-  runAsGroup: {{ .Values.agent.runAsGroup }}
+    runAsUser: {{ .Values.agent.runAsUser }}
+    runAsGroup: {{ .Values.agent.runAsGroup }}
     ttyEnabled: {{ .Values.agent.TTYEnabled }}
     workingDir: {{ .Values.agent.workingDir }}
 {{- if .Values.agent.envVars }}
