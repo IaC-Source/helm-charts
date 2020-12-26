@@ -25,7 +25,8 @@ service:
   loadBalancerIP: ""
   annotations: {}
 
-customLabels: {}
+customLabels:
+  app: prometheus
 
 hostNetwork: false
 
