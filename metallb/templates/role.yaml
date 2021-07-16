@@ -14,3 +14,36 @@ rules:
   - get
   - list
   - watch
+{{ if .Values.secret.enabled }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  labels:
+    app: metallb
+  name: controller
+  namespace: {{.Release.Namespace}}
+rules:
+  - apiGroups:
+    - ''
+    resources:
+    - secrets
+    verbs:
+    - create
+  - apiGroups:
+    - ''
+    resources:
+    - secrets
+    resourceNames:
+    - memberlist
+    verbs:
+    - list
+  - apiGroups:
+    - apps
+    resources:
+    - deployments
+    resourceNames:
+    - controller
+    verbs:
+    - get
+{{ end }}

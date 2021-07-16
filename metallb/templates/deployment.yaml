@@ -28,9 +28,23 @@ spec:
         image: {{ .Values.controller.image }}:{{ .Values.controller.tag }}
         imagePullPolicy: IfNotPresent
         name: controller
+        {{ if .Values.security.enabled }}
+        env:
+        - name: METALLB_ML_SECRET_NAME
+          value: {{ .Values.secret.name }}
+        - name: METALLB_DEPLOYMENT
+          value: controller
+        {{ end }}
         ports:
         - containerPort: 7472
           name: monitoring
+        {{ if .Values.security.enabled }}
+        - containerPort: 7946
+          name: memberlist-tcp
+        - containerPort: 7946
+          name: memberlist-udp
+          protocol: UDP
+        {{ end }}
         resources:
           limits:
             cpu: 100m
