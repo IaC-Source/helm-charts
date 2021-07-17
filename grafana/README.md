@@ -2,10 +2,10 @@
 
 * Installs the web dashboarding system [Grafana](http://grafana.org/)
 
-## TL;DR;
-
-```console
-$ helm install stable/grafana
+# TL;DR
+```bash
+$ helm repo add edu https://iac-source.github.io/helm-charts
+$ helm repo update
 ```
 
 ## Installing the Chart

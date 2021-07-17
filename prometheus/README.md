@@ -2,10 +2,10 @@
 
 [Prometheus](https://prometheus.io/), a [Cloud Native Computing Foundation](https://cncf.io/) project, is a systems and service monitoring system. It collects metrics from configured targets at given intervals, evaluates rule expressions, displays the results, and can trigger alerts if some condition is observed to be true.
 
-## TL;DR;
-
-```console
-$ helm install stable/prometheus
+# TL;DR
+```bash
+$ helm repo add edu https://iac-source.github.io/helm-charts
+$ helm repo update
 ```
 
 ## Introduction

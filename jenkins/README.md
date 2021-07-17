@@ -6,6 +6,12 @@ This chart installs a Jenkins server which spawns agents on [Kubernetes](http://
 
 Inspired by the awesome work of [Carlos Sanchez](https://github.com/carlossg).
 
+# TL;DR
+```bash
+$ helm repo add edu https://iac-source.github.io/helm-charts
+$ helm repo update
+```
+
 ## Get Repo Info
 
 ```console
