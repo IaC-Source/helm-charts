@@ -3,7 +3,7 @@ entries:
   dashboard:
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2021-07-17T18:03:04.411429+09:00"
+    created: "2021-07-17T20:34:27.255663+09:00"
     description: edu purpose dashboard
     digest: a45a63d72688850113f89419a42d66ff07657dd41ca200f99382c59a2f76710a
     home: https://github.com/iac-source/dashboard
@@ -19,7 +19,7 @@ entries:
   grafana:
   - apiVersion: v1
     appVersion: 7.0.3
-    created: "2021-07-17T18:03:04.412933+09:00"
+    created: "2021-07-17T20:34:27.257583+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: 79d408a92f8f1b78877dba988c5c0e624e284d94adb8770674128ce1942b389f
     home: https://grafana.net
@@ -41,7 +41,7 @@ entries:
   jenkins:
   - apiVersion: v1
     appVersion: lts
-    created: "2021-07-17T18:03:04.415933+09:00"
+    created: "2021-07-17T20:34:27.260867+09:00"
     description: Open source continuous integration server. It supports multiple SCM tools including CVS, Subversion and Git. It can execute Apache Ant and Apache Maven-based projects as well as arbitrary scripts.
     digest: 751b5b6d802b0626dbf1d168a85918d2b0ccb7347154e4cee225e3381f44447e
     home: https://jenkins.io/
@@ -73,7 +73,27 @@ entries:
   metallb:
   - apiVersion: v2
     appVersion: 0.8.2
-    created: "2021-07-17T18:03:04.416332+09:00"
+    created: "2021-07-17T20:34:27.263225+09:00"
+    description: unofficial helm chart of MetalLB, bare-metal LoadBalancer
+    digest: a88c965febf16bfdabbfd4b0d0b606b3954325f180cdc31854649c3a77807867
+    home: https://github.com/metallb/metallb
+    icon: https://iac-source.github.io/helm-charts/images/metallb-blue.png
+    maintainers:
+    - email: seongju.moon@linux.com
+      name: Seongju Moon
+    - email: genuwoo.j.shim@gmail.com
+      name: Genuwoo Shim
+    name: metallb
+    sources:
+    - https://github.com/metallb/metallb
+    - https://iac-source.github.io/helm-charts
+    type: application
+    urls:
+    - metallb-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.8.2
+    created: "2021-07-17T20:34:27.261311+09:00"
     description: unofficial helm chart of MetalLB, bare-metal LoadBalancer
     digest: 22cf3d14feab63b3d5e9377e01672286ded0ceea2237489d57997c3d4fef4cf2
     home: https://github.com/metallb/metallb
@@ -94,7 +114,7 @@ entries:
   prometheus:
   - apiVersion: v1
     appVersion: 2.19.0
-    created: "2021-07-17T18:03:04.421604+09:00"
+    created: "2021-07-17T20:34:27.267078+09:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -119,4 +139,4 @@ entries:
     urls:
     - prometheus-11.6.0.tgz
     version: 11.6.0
-generated: "2021-07-17T18:03:04.410906+09:00"
+generated: "2021-07-17T20:34:27.255198+09:00"
