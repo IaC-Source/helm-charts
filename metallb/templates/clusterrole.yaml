@@ -27,16 +27,6 @@ rules:
   verbs:
   - create
   - patch
-{{ if .Values.secret.enabled }}
-- apiGroups:
-  - policy
-  resourceNames:
-  - controller
-  resources:
-  - podsecuritypolicies
-  verbs:
-  - use
-{{ end }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
