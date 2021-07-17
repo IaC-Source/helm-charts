@@ -1,30 +1,20 @@
-[metallb](https://github.com/metallb/metallb) is an open source, rock solid LoadBalancer. It handles the ServiceType: Loadbalancer.
-
-_this is education purpose chart_
+_This is educational purpose chart_ for [metallb](https://github.com/metallb/metallb)
+**MetalLB** hooks into your Kubernetes cluster, and provides a network load-balancer implementation. In short, it allows you to create Kubernetes services of type LoadBalancer in clusters that don’t run on a cloud provider, and thus cannot simply hook into paid products to provide load balancers.
 
 # TL;DR
 ```bash
-$ helm repo add metallb https://iac-source.github.io/helm-charts
-$ helm install metallb --create-namespace --namespace=metallb-system edu/metallb
+$ helm repo add edu https://iac-source.github.io/helm-charts
+$ helm repo update
 ```
 
 # Install the Chart
 ```bash
-$ helm repo add metallb https://iac-source.github.io/helm-charts
-$ helm install metallb --create-namespace --namespace=metallb-system edu/metallb
-```
-
-# Install MetalLB with security mode (+ v9.0.3 )
-```bash
-
-$ kubectl create ns metallb-system
-$ kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
-$ helm install metallb metallb/metallb \
+$ helm install metallb edu/metallb \
 --namespace=metallb-system \
---set controller.tag=v0.9.3 \
---set speaker.tag=v0.9.3 \
---set configmap.ipRange=192.168.1.11-192.168.1.29 \
---set security.enabled=true 
+--create-namespace \
+--set controller.tag=<버전> \
+--set speaker.tag=<버전> \
+--set configmap.ipRange=<IP 범위> 
 ```
 
 # Uninstall the Chart
