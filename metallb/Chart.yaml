@@ -13,4 +13,4 @@ sources:
 - https://github.com/metallb/metallb
 - https://iac-source.github.io/helm-charts
 type: application
-version: 0.2.0
+version: 0.1.0

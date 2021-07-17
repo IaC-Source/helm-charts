@@ -6,7 +6,3 @@ speaker:
   tag: v0.8.2
 configmap:
   ipRange: 192.168.1.11-192.168.1.13
-secret:
-  name: memberlist
-security:
-  enabled: false
