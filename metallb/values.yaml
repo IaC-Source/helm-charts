@@ -1,8 +1,8 @@
 controller:
-  image: metallb/controller
+  image: quay.io/metallb/controller
   tag: v0.8.2
 speaker:
-  image: metallb/speaker
+  image: quay.io/metallb/speaker
   tag: v0.8.2
 configmap:
   ipRange: 192.168.1.11-192.168.1.13
